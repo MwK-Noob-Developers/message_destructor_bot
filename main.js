@@ -27,13 +27,13 @@ bot.command("timer", function (ctx) {
 });
 
 function onMessage(ctx) {
-    console.log(ctx.message.message_id);
     if(ctx.message.chat.id in chats && chats[ctx.message.chat.id].timer > 0) {
         setTimeout(function () {
             ctx.telegram.deleteMessage(ctx.message.chat.id, ctx.message.message_id);
         }, chats[ctx.message.chat.id].timer);
     }
 }
-bot.use(onMessage);
+
+bot.on("message", onMessage);
 
 bot.launch();
