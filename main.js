@@ -22,7 +22,7 @@ bot.command("set", function (ctx) {
     }
     else {
         ctx.reply("Error.\nSend: `/set <seconds>` to set time\n" +
-            "Eg: `/timeout 5` will set timer to 5 sec", Extra.markdown());
+            "Eg: `/set 5` will set timer to 5 sec", Extra.markdown());
     }
 });
 
