@@ -8,10 +8,10 @@ const chats = {};
 
 bot.help(function (ctx) {
     ctx.reply("Hello! I'm Destructor. I can destruct messages after a specified time\n" +
-        "Send: `/timer <seconds>` to set time (0 - do not delete)", Extra.markdown());
+        "Send: `/set <seconds>` to set time (0 - do not delete)", Extra.markdown());
 });
 
-bot.command("timer", function (ctx) {
+bot.command("set", function (ctx) {
     var time = parseInt(ctx.message.text.split(' ')[1], 10);
     if(!isNaN(time)) {
         if(!(ctx.message.chat.id in chats)) {
@@ -21,7 +21,7 @@ bot.command("timer", function (ctx) {
         ctx.reply("Message destruct timer is set to " + time + " sec");
     }
     else {
-        ctx.reply("Error.\nSend: `/timer <seconds>` to set time\n" +
+        ctx.reply("Error.\nSend: `/set <seconds>` to set time\n" +
             "Eg: `/timeout 5` will set timer to 5 sec", Extra.markdown());
     }
 });
