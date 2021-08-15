@@ -2,7 +2,7 @@ const Telegraf = require('telegraf');
 const Extra = require('telegraf/extra')
 
 
-const bot = new Telegraf('BOT_TOKEN'); //Write @BotFather /newbot and follow instructions
+const bot = new Telegraf('1975641845:AAFpxbc0H3rZ4qBavog0Mn7GYvALwnXWiA4'); //Write @BotFather /newbot and follow instructions
 
 const chats = {};
 const inlineMessageRatingKeyboard = [[
