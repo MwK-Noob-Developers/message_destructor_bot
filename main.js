@@ -6,8 +6,8 @@ const bot = new Telegraf('BOT_TOKEN'); //Write @BotFather /newbot and follow ins
 
 const chats = {};
 const inlineMessageRatingKeyboard = [[
-    { Updates: '👍', url: 't.me/mwklinks' },
-    { Support: '👎', url: 't.me/redbullFED' }
+    { text: '👍', url: 't.me/mwklinks' },
+    { text: '👎', url: 't.me/redbullFED' }
 ]];
 
 bot.help(function (ctx) {
