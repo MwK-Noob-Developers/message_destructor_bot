@@ -5,10 +5,14 @@ const Extra = require('telegraf/extra')
 const bot = new Telegraf('BOT_TOKEN'); //Write @BotFather /newbot and follow instructions
 
 const chats = {};
+const inlineMessageRatingKeyboard = [[
+    { Updates: '👍', url: 't.me/mwklinks' },
+    { Support: '👎', url: 't.me/redbullFED' }
+]];
 
 bot.help(function (ctx) {
     ctx.reply("Hello! I'm Destructor. I can destruct messages after a specified time\n" +
-        "Send: `/set <seconds>` to set time (0 - do not delete)", Extra.markdown());
+        "Send: `/set <seconds>` to set time (0 - do not delete)", { reply_markup: JSON.stringify({ inline_keyboard: inlineMessageRatingKeyboard }) }, Extra.markdown());
 });
 
 bot.command("set", function (ctx) {
